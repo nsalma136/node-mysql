@@ -13,5 +13,8 @@ RUN npm install
 # Copy the rest of the application code, including index.js
 COPY . .
 
+# Expose port 3000 (or any other port your app uses)
+EXPOSE 3000
+
 # Set the default command to run your Node app
 CMD ["node", "index.js"]
