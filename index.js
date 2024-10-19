@@ -1,9 +1,10 @@
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors');  // Import cors package
 
 // Create a connection to the database
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST || 'db-container-b4f12cc6-2059-473f-9dea-2173d66f0fb2',  // use 'mysql_server' as host when running in Docker
+  host: process.env.DB_HOST || 'db-container-b4f12cc6-2059-473f-9dea-2173d66f0fb2',
   user: process.env.MYSQL_USER || 'root',
   password: process.env.MYSQL_PASSWORD || 'l5voxldax2tumo2z6r6ir',
   database: process.env.MYSQL_DATABASE || 'db_ex0u0hcx'
@@ -21,6 +22,13 @@ connection.connect((err) => {
 // Initialize Express
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());  // Enable CORS for all routes
+
+// Default / route
+app.get('/', (req, res) => {
+  res.send('API is working! Welcome to the MySQL Node.js API.');
+});
 
 // API to fetch all categories
 app.get('/categories', (req, res) => {
