@@ -4,10 +4,10 @@ const cors = require('cors');  // Import cors package
 
 // Create a connection to the database
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST || 'db-container-e3a0cd23-2891-4d2e-9d45-86bc62dc6176',
+  host: process.env.DB_HOST || 'db-container-bf9018fe-4c68-4e72-9821-e9aa7cb521f1',
   user: process.env.MYSQL_USER || 'root',
-  password: process.env.MYSQL_PASSWORD || '8bmkwp8g9dt15f1etj5qswh',
-  database: process.env.MYSQL_DATABASE || 'db_kjld7l2s'
+  password: process.env.MYSQL_PASSWORD || 'uli1xpu4gxplrwoz9nei9',
+  database: process.env.MYSQL_DATABASE || 'db_s4dzkh2d'
 });
 
 // Connect to MySQL
